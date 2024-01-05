@@ -1,0 +1,42 @@
+# Local .terraform directories
+**/.terraform/*
+.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+
+# .tfvars files
+*.tfvars
+
+# .tfplan files
+*.tfplan
+
+# Ignore override files as they are usually used to override resources locally and so
+# are not checked in
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Include override files you do want to add to version control using negated pattern
+#
+# !example_override.tf
+
+# .terraform.lock.hcl files
+.terraform.lock.hcl
+
+# .terraform.tfstate files
+*.tfstate
+
+# .terraform.tfstate.backup files
+*.tfstate.backup
+
+# .zip files
+*.zip
+
+# VSCode related files
+.vscode/*
