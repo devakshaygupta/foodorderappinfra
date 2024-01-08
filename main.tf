@@ -19,6 +19,6 @@ module "dynamodb" {
   source = "./modules/dynamodb"
 }
 
-module "lambda" {
-  source = "./modules/lambda"
+module "apiGateway" {
+  source = "./modules/apiGateway"
 }

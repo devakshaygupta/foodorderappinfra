@@ -22,6 +22,8 @@ data "aws_iam_policy_document" "dynamo_db_table_access" {
     actions = [
       "dynamodb:BatchWriteItem",
       "dynamodb:GetRecords",
+      "dynamodb:Query",
+      "dynamodb:Scan",
     ]
 
     resources = ["arn:aws:dynamodb:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:table/${var.dynamodb-table-name}"]
@@ -37,6 +39,6 @@ data "aws_iam_policy_document" "lambda_logging" {
       "logs:PutLogEvents",
     ]
 
-    resources = ["arn:aws:logs:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:log-group:/aws/lambda/${var.first-function-name}:*"]
+    resources = ["arn:aws:logs:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:log-group:/aws/lambda/${var.get-users-function-name}:*"]
   }
 }

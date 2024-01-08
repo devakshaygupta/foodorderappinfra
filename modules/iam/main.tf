@@ -1,5 +1,5 @@
-resource "aws_iam_role" "role_for_first_lambda" {
-  name               = "role_for_first_lambda"
+resource "aws_iam_role" "role_for_lambda_function" {
+  name               = "role_for_lambda_function"
   assume_role_policy = data.aws_iam_policy_document.policy_for_lambda_role.json
 }
 
@@ -11,7 +11,7 @@ resource "aws_iam_policy" "lambda_logging" {
 }
 
 resource "aws_iam_role_policy_attachment" "lambda_logs" {
-  role       = aws_iam_role.role_for_first_lambda.name
+  role       = aws_iam_role.role_for_lambda_function.name
   policy_arn = aws_iam_policy.lambda_logging.arn
 }
 
@@ -23,6 +23,6 @@ resource "aws_iam_policy" "dynamo_db_table_access_policy" {
 }
 
 resource "aws_iam_role_policy_attachment" "dynamodb_access" {
-  role       = aws_iam_role.role_for_first_lambda.name
+  role       = aws_iam_role.role_for_lambda_function.name
   policy_arn = aws_iam_policy.dynamo_db_table_access_policy.arn
 }

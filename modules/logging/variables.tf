@@ -1,3 +1,3 @@
-variable "first-function-name" {
-  default = "first-function"
+variable "get-users-function-name" {
+  default = "get-users"
 }
